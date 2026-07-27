@@ -1,0 +1,8 @@
+{
+  "name": "@abyworkings-coder/llms-txt-lint",
+  "version": "1.1.0",
+  "exports": "./bin/cli.js",
+  "publish": {
+    "include": ["bin/", "README.md", "LICENSE"]
+  }
+}
