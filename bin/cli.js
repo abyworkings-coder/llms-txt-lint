@@ -117,15 +117,21 @@ function readInput(source) {
 }
 
 async function main() {
-  const args = process.argv.slice(2);
+  const rawArgs = process.argv.slice(2);
+  const jsonMode = rawArgs.includes("--json");
+  const args = rawArgs.filter((a) => a !== "--json");
+
   if (args.length === 0 || args.includes("-h") || args.includes("--help")) {
     console.log(
-      "Usage: llms-txt-lint <file-or-url>\n" +
+      "Usage: llms-txt-lint [--json] <file-or-url>\n" +
         "\n" +
         "Validates an llms.txt file against the llmstxt.org spec.\n" +
         "Examples:\n" +
         "  npx github:abyworkings-coder/llms-txt-lint ./llms.txt\n" +
-        "  npx github:abyworkings-coder/llms-txt-lint https://example.com/llms.txt"
+        "  npx github:abyworkings-coder/llms-txt-lint https://example.com/llms.txt\n" +
+        "  npx github:abyworkings-coder/llms-txt-lint --json ./llms.txt\n" +
+        "\n" +
+        "  --json  emit machine-readable results on stdout instead of text on stderr"
     );
     process.exit(args.length === 0 ? 1 : 0);
   }
@@ -135,11 +141,22 @@ async function main() {
   try {
     text = await readInput(source);
   } catch (err) {
+    if (jsonMode) {
+      console.log(JSON.stringify({ source, ok: false, readError: err.message }));
+      process.exit(2);
+    }
     console.error(`Error reading "${source}": ${err.message}`);
     process.exit(2);
   }
 
   const { errors, warnings } = validate(text);
+
+  if (jsonMode) {
+    console.log(
+      JSON.stringify({ source, ok: errors.length === 0, errors, warnings })
+    );
+    process.exit(errors.length > 0 ? 1 : 0);
+  }
 
   if (errors.length === 0 && warnings.length === 0) {
     console.log(`✓ ${source} is a valid llms.txt file`);

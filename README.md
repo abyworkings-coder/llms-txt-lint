@@ -15,6 +15,13 @@ npx github:abyworkings-coder/llms-txt-lint https://example.com/llms.txt
 
 Exit code is `0` when the file has no errors, `1` when it does — safe to drop into CI.
 
+Add `--json` for machine-readable output on stdout, useful for piping into other tooling (PR bots, dashboards, custom CI steps):
+
+```bash
+npx github:abyworkings-coder/llms-txt-lint --json ./llms.txt
+# {"source":"./llms.txt","ok":true,"errors":[],"warnings":[]}
+```
+
 ## What it checks
 
 - Exactly one `# Title` (H1), and it must be the first content in the file
