@@ -1,0 +1,15 @@
+# Example Project
+
+> A short summary of what this project does and why it matters.
+
+Some optional free-form context paragraph explaining more detail
+about the project that isn't captured in the summary above.
+
+## Docs
+
+- [Getting Started](https://example.com/docs/start): quick setup guide
+- [API Reference](https://example.com/docs/api)
+
+## Optional
+
+- [Changelog](https://example.com/changelog)

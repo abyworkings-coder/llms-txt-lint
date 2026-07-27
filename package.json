@@ -1,0 +1,24 @@
+{
+  "name": "llms-txt-lint",
+  "version": "1.0.0",
+  "description": "Validate llms.txt files against the llmstxt.org spec — catches malformed headers, broken link-list syntax, and missing required sections.",
+  "bin": {
+    "llms-txt-lint": "./bin/cli.js"
+  },
+  "type": "commonjs",
+  "license": "MIT",
+  "keywords": [
+    "llms.txt",
+    "llmstxt",
+    "linter",
+    "validator",
+    "ai",
+    "llm",
+    "seo",
+    "geo",
+    "aeo"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
