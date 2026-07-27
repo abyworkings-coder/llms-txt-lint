@@ -1,0 +1,19 @@
+name: "llms.txt Lint"
+description: "Validate an llms.txt file against the llmstxt.org spec in CI"
+author: "abyworkings-coder"
+branding:
+  icon: "check-circle"
+  color: "green"
+
+inputs:
+  path:
+    description: "Path or URL to the llms.txt file to validate"
+    required: false
+    default: "llms.txt"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run llms-txt-lint
+      shell: bash
+      run: node "${{ github.action_path }}/bin/cli.js" "${{ inputs.path }}"

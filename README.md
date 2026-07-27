@@ -25,6 +25,18 @@ Exit code is `0` when the file has no errors, `1` when it does — safe to drop 
 
 ## GitHub Action
 
+Use it as a native step in any workflow — no install, no `npx`:
+
+```yaml
+- uses: abyworkings-coder/llms-txt-lint@v1
+  with:
+    path: ./public/llms.txt
+```
+
+`path` defaults to `llms.txt` in the repo root, and can also be a URL. The step fails the job if the file has any errors.
+
+Or run it directly without the action wrapper:
+
 ```yaml
 - name: Lint llms.txt
   run: npx github:abyworkings-coder/llms-txt-lint ./public/llms.txt
