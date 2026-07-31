@@ -10,6 +10,7 @@ about the project that isn't captured in the summary above.
 - [Getting Started](https://example.com/docs/start): quick setup guide
 - [API Reference](https://example.com/docs/api)
 - [API Reference [Beta]](https://example.com/docs/api-beta): nested-bracket link text
+- [Wikipedia Example](https://en.wikipedia.org/wiki/Foo_(disambiguation)): nested-paren URL
 
 ## Optional
 
