@@ -4,7 +4,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const LINK_LINE = /^-\s*\[([^\]]*)\]\(([^)]*)\)\s*(?::\s*(.*))?$/;
+const LINK_LINE = /^-\s*\[((?:[^\[\]]|\[[^\[\]]*\])*)\]\(([^)]*)\)\s*(?::\s*(.*))?$/;
 const HEADING = /^(#{1,6})\s+(.*)$/;
 
 function validate(text) {

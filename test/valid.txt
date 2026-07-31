@@ -9,6 +9,7 @@ about the project that isn't captured in the summary above.
 
 - [Getting Started](https://example.com/docs/start): quick setup guide
 - [API Reference](https://example.com/docs/api)
+- [API Reference [Beta]](https://example.com/docs/api-beta): nested-bracket link text
 
 ## Optional
 
