@@ -10,3 +10,4 @@ Some intro text before the title.
 ### Too Deep
 
 # Second Title
+## Empty Trailing Section

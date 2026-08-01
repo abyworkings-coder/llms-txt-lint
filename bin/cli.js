@@ -18,6 +18,7 @@ function validate(text) {
   let inSection = false;
   let sectionHasBlockquoteOrList = false;
   let sawBlockquote = false;
+  let lastSectionLine = -1;
 
   for (let i = 0; i < lines.length; i++) {
     const raw = lines[i];
@@ -51,6 +52,7 @@ function validate(text) {
         }
         inSection = true;
         sectionHasBlockquoteOrList = false;
+        lastSectionLine = lineNo;
         continue;
       }
 
@@ -89,6 +91,10 @@ function validate(text) {
       continue;
     }
     // free-form prose after the title/blockquote, before any H2 section — allowed
+  }
+
+  if (inSection && !sectionHasBlockquoteOrList) {
+    warnings.push(`Line ${lastSectionLine}: section had no link list or blockquote content`);
   }
 
   if (h1Count === 0) {
