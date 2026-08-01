@@ -7,6 +7,10 @@ Some intro text before the title.
 - [Good Link](https://example.com/ok)
 - [](https://example.com/no-text)
 
+##
+
+## Bare Heading Regression
+
 ### Too Deep
 
 # Second Title

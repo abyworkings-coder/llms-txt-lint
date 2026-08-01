@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 const LINK_LINE = /^-\s*\[((?:[^\[\]]|\[[^\[\]]*\])*)\]\(((?:[^()]|\([^()]*\))*)\)\s*(?::\s*(.*))?$/;
-const HEADING = /^(#{1,6})\s+(.*)$/;
+const HEADING = /^(#{1,6})(?:\s+(.*))?$/;
 
 function validate(text) {
   const lines = text.split(/\r?\n/);
@@ -29,7 +29,7 @@ function validate(text) {
     const heading = line.match(HEADING);
     if (heading) {
       const level = heading[1].length;
-      const title = heading[2].trim();
+      const title = (heading[2] || "").trim();
 
       if (level === 1) {
         h1Count++;
