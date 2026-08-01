@@ -12,6 +12,10 @@ about the project that isn't captured in the summary above.
 - [API Reference [Beta]](https://example.com/docs/api-beta): nested-bracket link text
 - [Wikipedia Example](https://en.wikipedia.org/wiki/Foo_(disambiguation)): nested-paren URL
 
+## Notes
+
+> A section satisfied only by a blockquote, no link list.
+
 ## Optional
 
 - [Changelog](https://example.com/changelog)

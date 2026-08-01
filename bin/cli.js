@@ -65,6 +65,7 @@ function validate(text) {
 
     if (line.startsWith(">")) {
       sawBlockquote = true;
+      if (inSection) sectionHasBlockquoteOrList = true;
       continue;
     }
 
