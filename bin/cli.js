@@ -38,6 +38,9 @@ function validate(text) {
         } else {
           h1Line = lineNo;
         }
+        if (inSection && !sectionHasBlockquoteOrList) {
+          warnings.push(`Line ${lineNo}: previous section had no link list before this heading`);
+        }
         inSection = false;
         continue;
       }

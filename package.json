@@ -1,6 +1,6 @@
 {
   "name": "llms-txt-lint",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Validate llms.txt files against the llmstxt.org spec — catches malformed headers, broken link-list syntax, and missing required sections.",
   "bin": {
     "llms-txt-lint": "./bin/cli.js"
