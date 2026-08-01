@@ -77,7 +77,7 @@ function validate(text) {
         }
         if (!url.trim()) {
           errors.push(`Line ${lineNo}: link has empty URL — "${line}"`);
-        } else if (!/^https?:\/\//.test(url) && !url.startsWith("/") && !url.startsWith(".")) {
+        } else if (!/^[a-z][a-z0-9+.-]*:/i.test(url) && !url.startsWith("/") && !url.startsWith(".")) {
           warnings.push(`Line ${lineNo}: URL "${url}" is not absolute (http/https) or a clear relative path`);
         }
         sectionHasBlockquoteOrList = true;
